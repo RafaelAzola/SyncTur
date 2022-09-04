@@ -1,4 +1,5 @@
 "use strict";
+// declaração de variaveis
 let nomePacote = document.querySelector('#pacotes');
 let descricaoPacote = document.querySelector('#descricao');
 let dataPacote = document.querySelector('#dataDaViagem');
@@ -7,6 +8,7 @@ let botaoCadastrar = document.querySelector('#botaoCadastrar');
 let rodape = document.querySelectorAll('#footerLogo');
 let pacotesCadastrados = [];
 let contador = 1;
+// criação da classe "Pacote"
 class Pacote {
     constructor(Nome, Descricao, Data, Id) {
         this.nome = Nome;
@@ -24,6 +26,7 @@ class Pacote {
         this.data = Data;
     }
 }
+// função para criar o objeto "Pacote", coloca-lo no array "pacotesCadastrados" e simultaneamente criar um card com as informações do objeto
 const criarPacote = (_nome, _descricao, _data, _id) => {
     let pacote = new Pacote(_nome, _descricao, _data, _id);
     pacotesCadastrados.push(pacote);
@@ -48,20 +51,24 @@ const criarPacote = (_nome, _descricao, _data, _id) => {
     </div>`;
     limparFormulario();
 };
+// função para limpar os campos da pagina depois de cadastrar ou editar
 const limparFormulario = () => {
     nomePacote.value = '';
     dataPacote.value = '';
     descricaoPacote.value = '';
 };
+// função de excluir o card (não deu tempo de fazer a função para excluir o Objeto)
 const excluirPacote = (_id) => {
     document.querySelector(`#cartao-${_id}`).remove();
 };
+// função para editar o card (não consegui editar o objeto tambem, por mais que tenha feito os metodos. tambem planejava criar um campo de texto só pra editar)
 const editarPacote = (_id) => {
     document.querySelector(`#idNomeCard-${_id}`).innerHTML = nomePacote.value;
     document.querySelector(`#idDescCard-${_id}`).innerHTML = descricaoPacote.value;
     document.querySelector(`#idDtCard-${_id}`).innerHTML = dataPacote.value;
     limparFormulario();
 };
+// Consulta a API e preenche os cards com todos os objetos dela usando a função "criarPacote"
 var endpoint = 'https://62361b7feb166c26eb2f488a.mockapi.io/pacotes';
 fetch(endpoint, { method: 'GET', headers: { 'Content-type': "application/json" } })
     .then(response => response.json())
@@ -71,6 +78,7 @@ fetch(endpoint, { method: 'GET', headers: { 'Content-type': "application/json" }
     }
 })
     .catch(erro => console.log(erro));
+// Cria um pacote/card manualmente e direciona a tela para ele
 botaoCadastrar.onclick = () => {
     criarPacote(nomePacote.value, descricaoPacote.value, dataPacote.value, contador);
     document.querySelector('#footerLogo').scrollIntoView();
