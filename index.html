@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Pacotes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <span>SyncTur</span>
+    </header>
+    <main>
+        <h2 id="titulo">Cadastrar Pacotes</h2>
+        <section id="sectionPrincipal">
+            <section>
+                <div>
+                    <label for="pacotes">
+                        <h2>Pacote</h2>
+                    </label>
+                    <input type="text" id="pacotes" placeholder="Digite o nome completo">
+                </div>
+                <div id="subSection">
+                    <div id="statusPacote">
+                        <h2>Status do Pacote</h2>
+                        <div>
+                            <input type="radio" name="status" id="statusAtivo">
+                            <label for="statusAtivo">Ativo</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="status" id="statusInativo">
+                            <label id="statusInativo">Inativo</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="dataDaViagem">
+                            <h2>Data da Viagem</h2>
+                        </label>
+                        <input type="date" id="dataDaViagem">
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Descrição</h2>
+                <textarea id="descricao" placeholder="Descrição do pacote"></textarea>
+            </section>
+        </section>
+        <button type="submit" id="botaoCadastrar">Cadastrar</button>
+        <section id="sectionCard">
+        </section>
+    </main>
+    <footer>
+        <section id="footerLogo">
+            <h2>SyncTur</h2>
+        </section>
+        <hr>
+        <section id="footerInfo">
+            <span>
+                Company Inc., 8901 Marmora Road, Glasgow, D04 89GR
+            </span>
+            <span>
+                Call us now tell free: (800)2345-6789
+            </span>
+            <span>
+                Customer support: support@demolink.org
+            </span>
+            <span>
+                Skype: sample-username
+            </span>
+        </section>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

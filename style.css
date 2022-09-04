@@ -1,0 +1,180 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+header{
+    width: 100%;
+    height: 48px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    display: flex;
+}
+header span{
+    margin: auto;
+    margin-left: 1%;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 700;
+}
+main{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h2{
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 600;
+}
+input, textarea{
+    border: 1px solid #CED4DA;
+    border-radius: 4px;
+}
+textarea{
+    width: 550px;
+    height: 160px;
+}
+input::placeholder, textarea::placeholder{
+    padding-top: 20px;
+    padding-left: 20px;
+    font-family: 'Inter';
+    font-size: 16px;
+    color: #CED4DA;
+}
+footer{
+    margin-top: 2%;
+    width: 100%;
+    height: 250px;
+    background-color: #f6511d;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+footer h2{
+    font-family: 'Inter';
+    font-size: 40px;
+}
+footer hr{
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 200px;
+    border: 1px solid;
+}
+footer span{
+    margin: auto;
+    margin-left: 0px;
+}
+#titulo{
+    margin: 4% 0px 2%;
+}
+#sectionPrincipal{
+    width: 1190px;
+    display: flex;
+    justify-content: space-between;
+}
+#sectionPrincipal h2{
+    margin: 4% 0px;
+}
+#subSection{
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-between;
+}
+#subSection h2{
+    margin-bottom: 5%;
+}
+#pacotes{
+    width: 590px;
+    height: 38px;
+}
+#statusPacote label{
+    font-family: 'Inter';
+    font-size: 12px;
+}
+#dataDaViagem{
+    width: 290px;
+    height: 38px;
+}
+#botaoCadastrar{
+    margin: 4% 0px 2%;
+    width: 110px;
+    height: 40px;
+    color: white;
+    background-color: #8458FF;
+    border: 2px solid #8458FF;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+#sectionCard{
+    min-height: 20em;
+}
+#footerLogo{
+    margin: auto;
+    margin-top: 3%;
+    margin-right: 2%;
+}
+#footerInfo{
+    margin: auto;
+    margin-left: 2%;
+    width: 450px;
+    height: 145px;
+    font-family: 'Roboto';
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+.card{
+    margin: 2% 0px;
+    width: 1190px;
+    height: 265px;
+    border: 1px solid #DEE2E6;
+    border-radius: 4px;
+}
+.card h2{
+    font-weight: 800;
+}
+.card button{
+    margin-right: 15px;
+    width: 80px;
+    height: 40px;
+    color: white;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+.cardConteudo{
+    margin: 25px 0px 0px 60px;
+    height: 205px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cardTexto{
+    display: flex;
+    flex-direction: column;
+}
+.spanDescricao{
+    width: 510px;
+    height: 50px;
+    font-family: 'Inter';
+    font-size: 16px;
+    color: #68717A;
+}
+.spanViagem{
+    font-family: 'Inter';
+    font-size: 14px;
+}
+.botaoEditar{
+    background-color: #FFC107;
+    border: 2px solid #FFC107;
+}
+.botaoExcluir{
+    background-color: #DC3545;
+    border: 2px solid #DC3545;
+}
