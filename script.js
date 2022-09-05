@@ -5,7 +5,6 @@ let descricaoPacote = document.querySelector('#descricao');
 let dataPacote = document.querySelector('#dataDaViagem');
 let card = document.querySelector('#sectionCard');
 let botaoCadastrar = document.querySelector('#botaoCadastrar');
-let rodape = document.querySelectorAll('#footerLogo');
 let pacotesCadastrados = [];
 let contador = 1;
 // criação da classe "Pacote"
@@ -59,13 +58,17 @@ const limparFormulario = () => {
 };
 // função de excluir o card (não deu tempo de fazer a função para excluir o Objeto)
 const excluirPacote = (_id) => {
-    document.querySelector(`#cartao-${_id}`).remove();
+    let cartaoId = document.querySelector(`#cartao-${_id}`);
+    cartaoId.remove();
 };
 // função para editar o card (não consegui editar o objeto tambem, por mais que tenha feito os metodos. tambem planejava criar um campo de texto só pra editar)
 const editarPacote = (_id) => {
-    document.querySelector(`#idNomeCard-${_id}`).innerHTML = nomePacote.value;
-    document.querySelector(`#idDescCard-${_id}`).innerHTML = descricaoPacote.value;
-    document.querySelector(`#idDtCard-${_id}`).innerHTML = dataPacote.value;
+    let idNomeCard = document.querySelector(`#idNomeCard-${_id}`);
+    idNomeCard.innerHTML = nomePacote.value;
+    let idDescCard = document.querySelector(`#idDescCard-${_id}`);
+    idDescCard.innerHTML = descricaoPacote.value;
+    let idDtCard = document.querySelector(`#idDtCard-${_id}`);
+    idDtCard.innerHTML = dataPacote.value;
     limparFormulario();
 };
 // Consulta a API e preenche os cards com todos os objetos dela usando a função "criarPacote"

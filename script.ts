@@ -1,10 +1,9 @@
 // declaração de variaveis
-let nomePacote = document.querySelector('#pacotes')
-let descricaoPacote = document.querySelector('#descricao')
-let dataPacote = document.querySelector('#dataDaViagem')
-let card = document.querySelector('#sectionCard')
-let botaoCadastrar = document.querySelector('#botaoCadastrar')
-let rodape = document.querySelectorAll('#footerLogo')
+let nomePacote = document.querySelector('#pacotes') as HTMLInputElement
+let descricaoPacote = document.querySelector('#descricao') as HTMLInputElement
+let dataPacote = document.querySelector('#dataDaViagem') as HTMLInputElement
+let card = document.querySelector('#sectionCard') as HTMLInputElement
+let botaoCadastrar = document.querySelector('#botaoCadastrar') as HTMLElement
 
 let pacotesCadastrados:Array<object> = []
 let contador:number = 1
@@ -13,10 +12,10 @@ let contador:number = 1
 class Pacote implements IPacote{
     nome:string
     descricao:string
-    data: Date
+    data: string
     id: number
 
-    constructor(Nome:string,Descricao:string,Data:Date,Id:number){
+    constructor(Nome:string,Descricao:string,Data:string,Id:number){
         this.nome = Nome
         this.descricao = Descricao
         this.data = Data
@@ -28,7 +27,7 @@ class Pacote implements IPacote{
     setDescricao(Descricao:string):void {
         this.descricao = Descricao
     }
-    setData(Data:Date):void {
+    setData(Data:string):void {
         this.data = Data
     }
 }
@@ -36,11 +35,11 @@ class Pacote implements IPacote{
 interface IPacote{
     setNome(Nome:string):void
     setDescricao(Descricao:string):void
-    setData(Data:Date):void
+    setData(Data:string):void
 }
 
 // função para criar o objeto "Pacote", coloca-lo no array "pacotesCadastrados" e simultaneamente criar um card com as informações do objeto
-const criarPacote = (_nome:string,_descricao:string,_data:Date,_id:number) => {
+const criarPacote = (_nome:string,_descricao:string,_data:string,_id:number) => {
 
     let pacote = new Pacote(_nome,_descricao,_data,_id)
     pacotesCadastrados.push(pacote)
@@ -76,14 +75,21 @@ const limparFormulario = () => {
 
 // função de excluir o card (não deu tempo de fazer a função para excluir o Objeto)
 const excluirPacote = (_id:number) => {
-    document.querySelector(`#cartao-${_id}`).remove()
+    let cartaoId = document.querySelector(`#cartao-${_id}`) as HTMLElement
+    cartaoId.remove()
 }
 
 // função para editar o card (não consegui editar o objeto tambem, por mais que tenha feito os metodos. tambem planejava criar um campo de texto só pra editar)
 const editarPacote = (_id:number) => {
-    document.querySelector(`#idNomeCard-${_id}`).innerHTML = nomePacote.value
-    document.querySelector(`#idDescCard-${_id}`).innerHTML = descricaoPacote.value
-    document.querySelector(`#idDtCard-${_id}`).innerHTML = dataPacote.value
+    let idNomeCard = document.querySelector(`#idNomeCard-${_id}`) as HTMLElement
+    idNomeCard.innerHTML = nomePacote.value
+
+    let idDescCard = document.querySelector(`#idDescCard-${_id}`) as HTMLElement
+    idDescCard.innerHTML = descricaoPacote.value
+
+    let idDtCard = document.querySelector(`#idDtCard-${_id}`) as HTMLElement
+    idDtCard.innerHTML = dataPacote.value
+
     limparFormulario()
 }
 
@@ -105,5 +111,5 @@ botaoCadastrar.onclick = () =>{
     criarPacote(
         nomePacote.value,descricaoPacote.value,dataPacote.value,contador
         )
-    document.querySelector('#footerLogo').scrollIntoView()
+        document.querySelector('#footerLogo').scrollIntoView()
 }
