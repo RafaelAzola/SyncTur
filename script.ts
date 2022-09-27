@@ -108,8 +108,9 @@ fetch(endpoint, {method:'GET',headers:{'Content-type':"application/json"}})
 
 // Cria um pacote/card manualmente e direciona a tela para ele
 botaoCadastrar.onclick = () =>{
+    let footer = document.querySelector('#footerLogo')
     criarPacote(
         nomePacote.value,descricaoPacote.value,dataPacote.value,contador
-        )
-        document.querySelector('#footerLogo').scrollIntoView()
+    )
+    footer!.scrollIntoView()
 }
